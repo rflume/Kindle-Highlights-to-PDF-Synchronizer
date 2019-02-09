@@ -1,4 +1,4 @@
-# Kindle-PDF-Highlighter
+# Kindle-Highlights to PDF Synchronizer
 
 This script aims at synchronizing highlights that you created for a **PDF** file on your Kindle Paperwhite (**7th generation** tested only!).
 
