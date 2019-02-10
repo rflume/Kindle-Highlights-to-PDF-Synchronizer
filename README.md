@@ -21,7 +21,37 @@ In addition, you need a local copy of the PDF file that you highlighted on your 
 
 Note that the language of the `- [YOUR CLIPPING ON PAGE XXX-YYY]` line does not matter. Also, only the `XXX` page number is parsed, as in my file the `XXX` and `YYY` never differed.
 
-## Installation
+## Docker
+
+The easiest way to run the script is by running it as a *Docker* container.<br/>
+This way, you only need to [install Docker](https://docs.docker.com/install/) instead of the script dependency [PyMuPDF](https://github.com/rk700/PyMuPDF).
+
+Copy your `My Clippings.txt` and the PDF file into the `files-docker` directory of this project.<br/>
+Then run the commands below
+
+```bash
+# build the image (takes some time)
+docker build -t kindle-highlights-sync .
+
+# Run the script in a container (do NOT pass full paths for the -e args)
+docker run -td --rm \
+    --name kindle-highlights-sync \
+    -v "$(pwd)"/files-docker:/usr/src/app/files \
+    -e book="<YOUR_PDF_FILENAME>" \
+    -e title="<CLIPPINGS_BOOKTITLE>" \
+    kindle-highlights-sync
+```
+
+This will create the file `/files-docker/highlighted.pdf`.<br/>
+You may specify a different filename by passing `-e outfile="..." \` to the `docker run` command (insert this before the last line!).
+
+If you do not want to use the container anymore, delete the *Docker* image with `docker rmi kindle-highlights-sync`.
+
+### Debugging the Container
+
+In order to debug a malfunctioning container, run it without the `--rm` tag. Then, run `docker logs kindle-highlights-syn`.
+
+## Native Installation
 
 This script used [PyMuPDF](https://github.com/rk700/PyMuPDF) which you have to install prior to executing the script.
 
