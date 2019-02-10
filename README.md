@@ -4,6 +4,18 @@ This script aims at synchronizing highlights that you created for a **PDF** file
 
 Other eBook formats than *PDF*, e.g. *EPUB*, are currently *not* supported!
 
+## Table of Contents
+
+* [Requirements](#requirements)
+* [Docker](#docker)
+  * [Debugging the Container](#debugging-the-container)
+* [Native Installation](#native-installation)
+  * [Usage](#usage)
+    * [Example](#example)
+* [Contributions](#contributions)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
 ## Requirements
 
 You need to be in possession of the `My Clippings.txt` file, which is stored in the `Documents` directory of your eBook reader. This file contains text passages that you marked/highlighted on your reader.<br/>
@@ -55,7 +67,7 @@ In order to debug a malfunctioning container, run it without the `--rm` tag. The
 
 This script used [PyMuPDF](https://github.com/rk700/PyMuPDF) which you have to install prior to executing the script.
 
-## Usage
+### Usage
 
 ```bash
 usage: kindle-pdf-highlighter.py [-h] --book BOOK --clippings CLIPPINGS
@@ -77,7 +89,7 @@ Blocks for clippings from other ebooks are ignored.
 **The provided paths must be absolute paths to the respective files. Paths stating with `~/`, `./` or `../` are currently not supported!**<br/>
 Furthermore, the paths for `--book` and `--outfile` must differ.
 
-### Example
+#### Example
 
 You find the files used for this example in the `example` directory.
 
