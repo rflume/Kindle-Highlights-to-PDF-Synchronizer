@@ -1,8 +1,8 @@
 # Kindle-Highlights to PDF Synchronizer
 
-This script aims at synchronizing highlights that you created for a **PDF** file on your Kindle Paperwhite (**7th generation** tested only!).
+This script aims at synchronizing highlights that you created for a **PDF** file on your Kindle Paperwhite (**7th generation** tested only!). It will most likely work for all Kindle eBook readers that store the highlighted text in the `My Clippings.txt` file (see [Requirements](#requirements).
 
-Other eBook formats than *PDF*, e.g. *EPUB*, are currently not supported!
+Other eBook formats than *PDF*, e.g. *EPUB*, are currently *not* supported!
 
 ## Requirements
 
